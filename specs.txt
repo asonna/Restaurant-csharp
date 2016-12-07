@@ -1,0 +1,71 @@
+Home page
+
+  Welcome to the Best Restaurants
+
+  List of all the names of restuarants
+
+  Portland City Grill
+  Killer Burger
+  Departure
+  Pok Pok
+
+
+  Search by cuisine type (drop down)
+
+  Add new restaurant
+
+  delete all restaurants
+
+  --------------------------------------------------------------
+
+  Add new restaurant
+
+  Form
+    Whats your restaurant name:
+    Cuisine type:
+    Restaurant description:
+  Submit Button
+
+  link to home page.
+
+  ----------------------------------------------------------------
+
+  Add new restaurant Success page!
+
+  This restaurant has been added
+  list out all the properties
+
+  link to home page
+  link to add another
+  -------------------------------------------------------------------
+
+  When you click on a restaurant name from homepage
+
+  Displays properties of the restaurant
+
+  Name: Killer Burger
+  Cuisine: American
+  Description: A fun burger restaurant for families with a bar.
+
+  Edit properties link
+
+  Delete the restaurant
+
+  -----------------------------------------------------------------------
+
+  Edit properties page
+
+  A list of properties
+  Form inputs next to each property
+  Submit Button
+  Takes you to successful edit page!
+
+  -----------------------------------------------------------------------
+
+  Edit restaurant Success page!
+
+  This restaurant has been added
+  list out all the properties
+
+  link to home page
+  link to add another
