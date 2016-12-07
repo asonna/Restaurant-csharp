@@ -10,17 +10,20 @@ namespace BestRestaurant
   {
     public RestaurantTest()
     {
-      DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=best_restaurant_test; Integrated Security= SSPI;";
+      DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=best_restaurants_test;Integrated Security=SSPI;";
     }
 
     [Fact]
     public void Test_RestaurantsEmptyAtFirst_0()
     {
       int result = Restaurant.GetAll().Count;
-      Assert.Equal(0, result)
-
+      Assert.Equal(0, result);
     }
 
-
+    public void Dispose()
+    {
+      Restaurant.DeleteAll();
+      // Category.DeleteAll();
+    }
   }
 }

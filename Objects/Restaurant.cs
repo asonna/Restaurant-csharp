@@ -6,9 +6,9 @@ namespace BestRestaurant
 {
   public class Restaurant
   {
-    private int _id; //Restaurant ID
     private string _name; //Restaurant Name
     private string _description;
+    private int _id; //Restaurant ID
 
     public Restaurant(string name, string description, int Id = 0)
     {
@@ -51,18 +51,36 @@ namespace BestRestaurant
 
       SqlCommand cmd = new SqlCommand("SELECT * FROM restaurants;", conn);
       SqlDataReader rdr = cmd.ExecuteReader();
+
+      while(rdr.Read())
+      {
+        int restaurantId = rdr.GetInt32(0);
+        string restaurantName = rdr.GetString(1);
+        string restaurantDescription = rdr.GetString(2);
+        Restaurant newRestaurant = new Restaurant(restaurantName, restaurantDescription, restaurantId);
+        allRestaurants.Add(newRestaurant);
+      }
+
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+
+      if (conn != null)
+      {
+        conn.Close();
+      }
+
+      return allRestaurants;
     }
 
-    if (rdr != null)
+    public static void DeleteAll()
     {
-      rdr.Close();
-    }
-    if (conn != null)
-    {
+      SqlConnection conn = DB.Connection();
+      conn.Open();
+      SqlCommand cmd = new SqlCommand("DELETE FROM restaurants;", conn);
+      cmd.ExecuteNonQuery();
       conn.Close();
     }
-
-    return allRestaurants;
-
   }
 }
