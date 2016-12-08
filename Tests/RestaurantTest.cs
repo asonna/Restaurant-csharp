@@ -24,8 +24,8 @@ namespace BestRestaurant
     public void Test_Equal_ReturnsTrueForSameName()
     {
       //Arrange, Act
-      Restaurant firstRestaurant = new Restaurant("Killer burger", "desc1");
-      Restaurant secondRestaurant = new Restaurant("Killer burger", "desc1");
+      Restaurant firstRestaurant = new Restaurant("Killer burger", "desc1", 1);
+      Restaurant secondRestaurant = new Restaurant("Killer burger", "desc1", 1);
 
       //Assert
       Assert.Equal(firstRestaurant, secondRestaurant);
@@ -35,7 +35,7 @@ namespace BestRestaurant
     public void Test_Save_SavesRestaurantToDatabase()
     {
       //Arrange
-      Restaurant testRestaurant = new Restaurant("Killer burger", "desc1");
+      Restaurant testRestaurant = new Restaurant("Killer burger", "desc1", 1);
       testRestaurant.Save();
 
       //Act
@@ -50,7 +50,7 @@ namespace BestRestaurant
     public void Test_Save_AssignsIdToRestaurantObject()
     {
       //Arrange
-      Restaurant testRestaurant = new Restaurant("Departure", "desc2");
+      Restaurant testRestaurant = new Restaurant("Departure", "desc2", 2);
       testRestaurant.Save();
 
       //Act
@@ -67,7 +67,7 @@ namespace BestRestaurant
     public void Test_Find_FindsRestaurantInDatabase()
     {
       //Arrange
-      Restaurant testRestaurant = new Restaurant("Departure", "desc2");
+      Restaurant testRestaurant = new Restaurant("Departure", "desc2", 2);
       testRestaurant.Save();
 
       //Act
